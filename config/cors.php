@@ -12,7 +12,6 @@ return [
     |
     */
    
-    'supportsCredentials' => false,
     'allowedOrigins' => ['*'],
     'allowedOriginsPatterns' => [],
     'allowedHeaders' => ['*'],
