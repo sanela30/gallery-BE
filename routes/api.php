@@ -21,4 +21,4 @@ Route::post('/login','Auth\LoginController@authenticate');
 Route::post('/register','Auth\RegisterController@create');
 
 Route::middleware('jwt')->get('/allGalleries','GalleriesController@index');
-
+Route::middleware('jwt')->get('/gallerie/{id}','GalleriesController@show');

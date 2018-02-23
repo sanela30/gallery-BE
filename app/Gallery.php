@@ -14,4 +14,10 @@ class Gallery extends Model
        {
             return $this->hasMany('App\Image');
        }
+
+    public static function getSingleGallery($id){
+    	   return self::with('user')->with(['images'], function ($q) {
+    		return $q->whereNotNull('image_url')->orderBy('order', 'asc');
+    	})->find($id);
+    }  
 }
