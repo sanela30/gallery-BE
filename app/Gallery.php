@@ -20,4 +20,8 @@ class Gallery extends Model
     		return $q->whereNotNull('image_url')->orderBy('order', 'asc');
     	})->find($id);
     }  
+
+    public function comments(){
+		return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+	}
 }
